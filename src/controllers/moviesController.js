@@ -13,8 +13,20 @@ module.exports = {
             })
     },
     show: function (req, res) {
-        //buscar una pelicula por el id
-        //enviar el dato a la vista
+        db.movies.findByPk(req.params.id)
+            .then(data => {
+                if (data) {
+                    res.render('/movies/detail', {
+                        pelicula: data
+                    })
+                } else {
+                    res.redirect('/movies')
+                }
+
+            })
+            .catch(error => {
+                res.send("Hubo un error, intentalo de nuevo");
+            })
     },
     recent: function (req, res) {
         // buscar todas las peliculas 
