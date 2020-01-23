@@ -13,13 +13,19 @@ let cols = {
         allowNull: false
     },
     rating: {
-        type: dataTypes.INTEGER
+        type: dataTypes.INTEGER,
+        allowNull: true,
+        defaultValue = 0
     },
     awards: {
-        type: dataTypes.INTEGER
+        type: dataTypes.INTEGER,
+        allowNull: true,
+        defaultValue = 0
     },
     release_date: {
-        type: dataTypes.INTEGER
+        type: dataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: "Próximamente"
     },
     length: {
         type: dataTypes.INTEGER,
@@ -27,7 +33,8 @@ let cols = {
         defaultValue: 0
     },
     genre_id: {
-        type: dataTypes.INTEGER
+        type: dataTypes.INTEGER,
+        allowNull: false
     }
 };
 

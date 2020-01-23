@@ -4,7 +4,7 @@ module.exports = {
     index: function (req, res) {
         db.movies.findAll()
             .then(data => {
-                res.render('movies/index', {
+                res.render('/movies', {
                     peliculas: data
                 })
             })
